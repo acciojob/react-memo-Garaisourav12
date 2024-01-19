@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 const MemoApp = () => {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState([{id:1, content: 'new todo'}]);
   const [memo, setMemo] = useState([]);
   const [count, setCount] = useState(0);
   const [inputText, setInputText] = useState('');
@@ -11,7 +11,7 @@ const MemoApp = () => {
   }, [todos]);
 
   const handleAddTodo = () => {
-    setTodos([...todos, { id: todos.length + 1, content: 'New Todo' }]);
+    setTodos([...todos, { id: todos.length + 1, content: 'new todo' }]);
   };
 
   const handleIncrement = () => {
@@ -36,8 +36,8 @@ const MemoApp = () => {
       <div>
         <h1>My todos</h1>
         <ul>
-            {todos.map((todo) => (
-                <li key={todo.id}>{todo.content}</li>
+            {todos.map((todo, i) => (
+                <li key={todo.id} id={`todo-${i}`}>{todo.content}</li>
             ))}
         </ul>
         <button id='add-todo-btn' onClick={handleAddTodo}>Add Todo</button>
@@ -45,7 +45,7 @@ const MemoApp = () => {
 
       <div>
         <span>Count: {count}</span>
-        <button id='incr-cnt' onClick={handleIncrement}>Increment</button>
+        <button id='incr-cnt' onClick={handleIncrement}>+</button>
       </div>
 
       <div>
@@ -55,7 +55,7 @@ const MemoApp = () => {
           onChange={handleInputChange}
           id='skill-input'
         />
-        <button onClick={handleAddCustomTodo}>Add Skill</button>
+        <button id='skill-btn' onClick={handleAddCustomTodo}>Add Skill</button>
       </div>
 
       <ul>
