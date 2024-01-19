@@ -49,6 +49,10 @@ const MemoApp = () => {
       </div>
 
       <div>
+        <p id='calc'>1000000000</p>
+      </div>
+
+      <div>
         <input
           type="text"
           value={inputText}
@@ -60,7 +64,7 @@ const MemoApp = () => {
 
       <ul>
         {memo.map((todo) => (
-          <li key={todo.id}>{todo.content}</li>
+          <li key={todo.id} id={`item-${todo.content}`}>{todo.content}</li>
         ))}
       </ul>
     </div>
