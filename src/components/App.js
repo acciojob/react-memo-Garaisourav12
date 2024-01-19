@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 const MemoApp = () => {
-  const [todos, setTodos] = useState([{id:1, content: 'new todo'}]);
+  const [todos, setTodos] = useState([{id:1, content: 'New Todo'}]);
   const [memo, setMemo] = useState([]);
   const [count, setCount] = useState(0);
   const [inputText, setInputText] = useState('');
@@ -11,7 +11,7 @@ const MemoApp = () => {
   }, [todos]);
 
   const handleAddTodo = () => {
-    setTodos([...todos, { id: todos.length + 1, content: 'new todo' }]);
+    setTodos([...todos, { id: todos.length + 1, content: 'New Todo' }]);
   };
 
   const handleIncrement = () => {
@@ -44,8 +44,8 @@ const MemoApp = () => {
       </div>
 
       <div>
-        <span>Count: {count}</span>
-        <button id='incr-cnt' onClick={handleIncrement}>+</button>
+        <span id='incr-cnt'>{count}</span>
+        <button id='incr-btn' onClick={handleIncrement}>+</button>
       </div>
 
       <div>
