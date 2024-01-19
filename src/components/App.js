@@ -49,7 +49,7 @@ const MemoApp = () => {
       </div>
 
       <div>
-        <p id='calc'>1000000000</p>
+        <p id='calc'>{1000000000+count}</p>
       </div>
 
       <div>
