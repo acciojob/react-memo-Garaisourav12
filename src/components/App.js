@@ -40,11 +40,10 @@ const MemoApp = () => {
                 <li key={todo.id}>{todo.content}</li>
             ))}
         </ul>
-        <button>Add Todo</button>
+        <button onClick={handleAddTodo}>Add Todo</button>
       </div>
 
       <div>
-        <button onClick={handleAddTodo}>Add Todo</button>
         <span>Count: {count}</span>
         <button onClick={handleIncrement}>Increment</button>
       </div>
