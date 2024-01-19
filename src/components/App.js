@@ -40,12 +40,12 @@ const MemoApp = () => {
                 <li key={todo.id}>{todo.content}</li>
             ))}
         </ul>
-        <button onClick={handleAddTodo}>Add Todo</button>
+        <button id='add-todo-btn' onClick={handleAddTodo}>Add Todo</button>
       </div>
 
       <div>
         <span>Count: {count}</span>
-        <button onClick={handleIncrement}>Increment</button>
+        <button id='incr-cnt' onClick={handleIncrement}>Increment</button>
       </div>
 
       <div>
@@ -53,6 +53,7 @@ const MemoApp = () => {
           type="text"
           value={inputText}
           onChange={handleInputChange}
+          id='skill-input'
         />
         <button onClick={handleAddCustomTodo}>Add Skill</button>
       </div>
